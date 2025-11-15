@@ -67,6 +67,4 @@ release:
 
     ---
 
-    **Full Changelog**: https://github.com/BrunoKrugel/echo-swagger/compare/{{ .PreviousTag }}...{{ .Tag }}
-
     Released by [GoReleaser](https://github.com/goreleaser/goreleaser).
