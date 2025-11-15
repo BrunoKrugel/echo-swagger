@@ -2,6 +2,10 @@
 
 echo middleware to automatically generate RESTful API documentation with Swagger 2.0.
 
+> [!IMPORTANT]
+> This repository is just an updated fork of [swaggo/echo-swagger](https://github.com/swaggo/echo-swagger).
+
+
 [![Build Status](https://github.com/BrunoKrugel/echo-swagger/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/features/actions)
 [![Codecov branch](https://img.shields.io/codecov/c/github/BrunoKrugel/echo-swagger/master.svg)](https://codecov.io/gh/BrunoKrugel/echo-swagger)
 [![Go Report Card](https://goreportcard.com/badge/github.com/BrunoKrugel/echo-swagger)](https://goreportcard.com/report/github.com/BrunoKrugel/echo-swagger)
@@ -119,13 +123,13 @@ Note: If you are using Gzip middleware you should add the swagger endpoint to sk
 
 ### Example
 
-```
+```go
 e.Use(middleware.GzipWithConfig(middleware.GzipConfig{
-		Skipper: func(c echo.Context) bool {
-			if strings.Contains(c.Request().URL.Path, "swagger") {
-				return true
-			}
-			return false
-		},
-	}))
+	Skipper: func(c echo.Context) bool {
+		if strings.Contains(c.Request().URL.Path, "swagger") {
+			return true
+		}
+		return false
+	},
+}))
 ```
